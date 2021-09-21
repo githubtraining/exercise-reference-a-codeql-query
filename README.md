@@ -16,7 +16,7 @@ A grading script exists under `.github/workflows/grading.yml`. You do not need t
 
 <!-- OPTIONAL, only required for exercises that use PATs
 <details><summary>:closed_lock_with_key: About the use of secrets and access tokens in this exercise.</summary>
-  
+
 > This exercise asks you to create a personal access token (PAT). This step is a prerequisite of the exercise, and you should already be comfortable with PATs on GitHub before proceeding. The PAT is encrypted and used only by a local action that does not leave your repository. GitHub has safeguards in place if the PAT is exposed by mistake, but you should know that if someone gains access to your PAT, they would have the same access you've given the token. To be safe, we recommend setting an expiration for the token. If you'd like to learn more about how your PAT is used, check the action's documentation in [`.github/actions/`](.github/actions/), [Creating a personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token), and [Available scopes](https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps#available-scopes).
 
 </details>
@@ -24,8 +24,8 @@ A grading script exists under `.github/workflows/grading.yml`. You do not need t
 
 <!-- OPTIONAL, only required for exercises that use orgs
 <details><summary> 👥 About the use of organizations in this exercise</summary>
- 
-> This exercise needs to be completed in an organization. We recommend you [create a new organization](https://github.com/account/organizations/new?coupon=&plan=team_free) for free. If you choose to use an existing organization, note that this exercise will ask you to adjust settings in the organization that may have unintended effects on existing repositories or organization members. 
+
+> This exercise needs to be completed in an organization. We recommend you [create a new organization](https://github.com/account/organizations/new?coupon=&plan=team_free) for free. If you choose to use an existing organization, note that this exercise will ask you to adjust settings in the organization that may have unintended effects on existing repositories or organization members.
 </details>
  -->
 
@@ -38,6 +38,8 @@ Please complete the instructions below:
 1. Create your own copy of this repository by using the [Use this template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template) button.
 
 <!-- Add your steps below starting with step 2 -->
+
+configure the CodeQL Init Action in the `.github/workflows/codeQL.yml` workflow to use a custom configuration file as input
 
 ## Useful resources
 

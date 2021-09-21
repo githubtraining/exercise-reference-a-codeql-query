@@ -1,14 +1,19 @@
-const github = require("@actions/github");
-const core = require("@actions/core");
+const yaml = require("js-yaml");
+const fs = require("fs");
+const hasValidInputs = require("./validateInputs");
 
 module.exports = async () => {
-  const token = core.getInput("token");
-  const octokit = github.getOctokit(token);
+  const codeQLWorkflowFile = fs.readFileSync(
+    `${process.env.GITHUB_WORKSPACE}/.github/workflows/codeQL.yml`,
+    "utf8"
+  );
+  const parsedCodeQLWorkflow = yaml.load(codeQLWorkflowFile);
+  const validConfigStatus = hasValidInputs(parsedCodeQLWorkflow);
 
   try {
     //   Do some logic to verify the leaner understands
 
-    if (GOOD - RESULT) {
+    if (validConfigStatus.isValid) {
       return {
         reports: [
           {
@@ -35,8 +40,9 @@ module.exports = async () => {
             level: "warning",
             msg: `incorrect solution`,
             error: {
-              expected: "What we expecrted",
-              got: `What we got`,
+              expected:
+                "The config file located in the .github/codeql directory to be used as input to the CodeQL-Build job step named 'Initialize CodeQL'",
+              got: `${validConfigStatus.message}`,
             },
           },
         ],
@@ -46,14 +52,14 @@ module.exports = async () => {
     return {
       reports: [
         {
-          filename: filename,
+          filename: "",
           isCorrect: false,
           display_type: "actions",
           level: "fatal",
           msg: "",
           error: {
             expected: "",
-            got: "An internal error occurred.  Please open an issue at: https://github.com/githubtraining/exercise-remove-commit-history and let us know!  Thank you",
+            got: "An internal error occurred.  Please open an issue at: https://github.com/githubtraining/exercise-reference-a-codeql-query and let us know!  Thank you",
           },
         },
       ],

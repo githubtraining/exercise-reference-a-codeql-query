@@ -1,5 +1,9 @@
 name: Grading workflow
-on: push
+on:
+  push:
+    paths:
+      - ".github/workflows/codeQL.yml"
+  workflow_dispatch:
 
 jobs:
   grade-learner:
@@ -11,8 +15,6 @@ jobs:
       - name: Grade exercise-reference-a-codeql-query activity
         id: events
         uses: ./.github/actions/local-action
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
 
       - name: Grading results
         uses: githubtraining/looking-glass-action@v1.0.0

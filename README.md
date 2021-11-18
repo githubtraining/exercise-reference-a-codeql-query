@@ -37,7 +37,7 @@ Please complete the instructions below:
 
 1. Create your own copy of this repository by using the [Use this template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template) button.
 
-2. Configure the `init` action in the `.github/workflows/codeQL.yml` workflow file to use a custom configuration file as input.
+2. Configure the `init` action in the `.github/workflows/codeQL.yml` workflow file to use the `.github/codeql/codeql-config.yml` configuration file as input.
 
 ## Useful resources
 
